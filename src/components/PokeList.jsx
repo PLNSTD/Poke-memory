@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 /* Get pokemon images from url API 'https://pokeapi.co/api/v2/pokemon/pikachu'  */
 // From returned JSON get in answer.sprites.other.official-artwork.front_default it returns a PNG file
 // Or get it in answer.sprites.other.dream_world.front_default it return an SVG file
-
+const pokeIdList = [1,4,7,12,17,25,34,64,104,130,143,149];
 
 async function infoAPI(pokeIdList, setCards, setFetching) {
     const cardsList = [];
@@ -27,9 +27,6 @@ async function infoAPI(pokeIdList, setCards, setFetching) {
 }
 
 export default function PokeList ({sendDataToParent}) {
-
-    const pokeIdList = [1,4,7,12,17,25,34,64,104,130,143,149];
-
     const [cardsList, setCards] = useState([{name: 'pokeTest', sprite: 'none'}]);
     const [isFetching, setFetching] = useState(true);
     const [previousCard, setPreviousCard] = useState(false);
